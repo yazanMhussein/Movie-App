@@ -24,7 +24,7 @@ const Host= process.env.PG_HOST
 const Port=process.env.PG_PORT
 
 const client = new pg.Client(`postgresql://${UserName}:${password}@${Host}:${Port}/${DataBase}`)
-const PORT = 8080;
+
 
 
 // try this out to see a differents between class vs function
