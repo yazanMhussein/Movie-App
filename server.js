@@ -21,7 +21,7 @@ app.use(express.json())
 // const UserName= process.env.PG_USER
 // const password= process.env.PG_PASSWORD
 // const Host= process.env.PG_HOST
- const Port=process.env.PG_PORT
+ const PORT=process.env.PG_PORT
 
 const client = new pg.Client(process.env.DBURL)
 
