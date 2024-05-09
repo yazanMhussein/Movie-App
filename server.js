@@ -17,11 +17,11 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 //server data to for render and a database
-const DataBase= process.env.PG_DATABASE
-const UserName= process.env.PG_USER
-const password= process.env.PG_PASSWORD
-const Host= process.env.PG_HOST
-const Port=process.env.PG_PORT
+// const DataBase= process.env.PG_DATABASE
+// const UserName= process.env.PG_USER
+// const password= process.env.PG_PASSWORD
+// const Host= process.env.PG_HOST
+// const Port=process.env.PG_PORT
 
 const client = new pg.Client(process.env.mdbApiKey)
 
