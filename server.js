@@ -23,7 +23,7 @@ app.use(express.json())
 // const Host= process.env.PG_HOST
  const Port=process.env.PG_PORT
 
-const client = new pg.Client(process.env.mdbApiKey)
+const client = new pg.Client(process.env.DBURL)
 
 
 
@@ -160,8 +160,8 @@ function deleteMovie(req,res){
 
 //this is function will you to the movieTrening router 
 function movieTrening(req,res){
-const mdbApiKey = process.env.mdbApiKey; 
-const urlTrending = `https://api.themoviedb.org/3/trending/all/week?api_key=${mdbApiKey}&language=en-US`;  
+const MDBAPIKEY = process.env.MDBAPIKEY; 
+const urlTrending = `https://api.themoviedb.org/3/trending/all/week?api_key=${MDBAPIKEY}&language=en-US`;  
 axios.get(urlTrending)
     .then((MovieListresult)=>{
          let mapResult = MovieListresult.data.results.map((item)=>{
@@ -177,9 +177,9 @@ axios.get(urlTrending)
  }
 // this is function will you to the movieSearch router 
 function movieSearch(req,res){
-    const mdbApiKey = process.env.mdbApiKey; 
+    const MDBAPIKEY = process.env.MDBAPIKEY; 
                     
-const urlsearch = `https://api.themoviedb.org/3/search/movie?api_key=${mdbApiKey}&language=en-US&query=The&page=2`;  
+const urlsearch = `https://api.themoviedb.org/3/search/movie?api_key=${MDBAPIKEY}&language=en-US&query=The&page=2`;  
 axios.get(urlsearch)
     .then((MovieListresult)=>{
          let mapResult = MovieListresult.data.results.map((item)=>{
@@ -195,8 +195,8 @@ axios.get(urlsearch)
  }
 // //this is function will you to the popular router 
 function popularPerson(req,res){
-    const mdbApiKey = process.env.mdbApiKey;             
-    const urlUpopular =`https://api.themoviedb.org/3/person/popular?api_key=${mdbApiKey}&language=en-US&page=1`;
+    const MDBAPIKEY = process.env.MDBAPIKEY;             
+    const urlUpopular =`https://api.themoviedb.org/3/person/popular?api_key=${MDBAPIKEY}&language=en-US&page=1`;
     axios.get(urlUpopular)
     .then((MovieListresult)=>{
         let mapResult = MovieListresult.data.results.map((item)=>{
@@ -211,8 +211,8 @@ function popularPerson(req,res){
 }
 //this is function will you to the tv router 
 function tvList(req,res){
-    const mdbApiKey = process.env.mdbApiKey; 
-    const UrlTv =`https://api.themoviedb.org/3/discover/tv?api_key=${mdbApiKey}&include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc`;
+    const MDBAPIKEY = process.env.MDBAPIKEY; 
+    const UrlTv =`https://api.themoviedb.org/3/discover/tv?api_key=${MDBAPIKEY}&include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc`;
     axios.get(UrlTv)
     .then((MovieListresult)=>{
         let mapResult = MovieListresult.data.results.map((item)=>{
